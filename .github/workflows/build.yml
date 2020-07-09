@@ -23,5 +23,5 @@ jobs:
     - name: Generate Pester Report
       uses: MirrorNG/nunit-reporter@v1.0.9
       with:
-        path: tests-reports/*.xml
+        path: test-reports/*.xml
         access-token:  ${{ secrets.GITHUB_TOKEN }}
