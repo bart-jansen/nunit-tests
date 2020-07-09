@@ -1,0 +1,27 @@
+name: Build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:
+        inlineScript: |
+           Install-Module -Name Pester -Force
+           Invoke-Pester './tests/*.tests.ps1' -OutputFile './test-reports/TEST-CI.xml' -OutputFormat 'NUnitXML'
+        azPSVersion: 'latest'
+
+    - name: Generate Pester Report
+      uses: MirrorNG/nunit-reporter@v1.0.9
+      with:
+        path: tests/*.xml
+        access-token:  ${{ secrets.GITHUB_TOKEN }}
