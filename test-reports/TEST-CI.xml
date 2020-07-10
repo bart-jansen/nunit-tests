@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="3" errors="0" failures="2" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2020-07-10" time="13:00:49">
+  <environment clr-version="4.0.30319.42000" user-domain="DESKTOP-9SQIGGC" cwd="C:\htdocs\nunit-test" platform="Microsoft Windows 10 Pro|C:\Windows|\Device\Harddisk3\Partition2" machine-name="DESKTOP-9SQIGGC" nunit-version="2.5.8.0" os-version="10.0.18363" user="bart-" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="0.9492" asserts="0" description="Pester">
+    <results>
+      <test-suite type="TestFixture" name="C:\htdocs\nunit-test\tests\get-emoji.tests.ps1" executed="True" result="Failure" success="False" time="0.9492" asserts="0" description="C:\htdocs\nunit-test\tests\get-emoji.tests.ps1">
+        <results>
+          <test-suite type="TestFixture" name="Get-Emoji" executed="True" result="Failure" success="False" time="0.6442" asserts="0" description="Get-Emoji">
+            <results>
+              <test-case description="Gets cactus" name="Get-Emoji.Gets cactus" time="0.1947" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="Gets wine" name="Get-Emoji.Gets wine" time="0.1142" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>Expected strings to be the same, but they were different.
+String lengths are both 4.
+Strings differ at index 2.
+Expected: 'ðŸ·'
+But was:  'ðŸŒµ'
+at Get-Emoji -Emoji wine | Should -Be 'ðŸ·', C:\htdocs\nunit-test\tests\get-emoji.tests.ps1:11</message>
+                  <stack-trace>at &lt;ScriptBlock&gt;, C:\htdocs\nunit-test\tests\get-emoji.tests.ps1:11</stack-trace>
+                </failure>
+              </test-case>
+              <test-case description="Gets balloon" name="Get-Emoji.Gets balloon" time="0.0294" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>Expected strings to be the same, but they were different.
+String lengths are both 4.
+Strings differ at index 2.
+Expected: 'ðŸŽˆ'
+But was:  'ðŸŒµ'
+at Get-Emoji -Emoji balloon | Should -Be 'ðŸŽˆ', C:\htdocs\nunit-test\tests\get-emoji.tests.ps1:15</message>
+                  <stack-trace>at &lt;ScriptBlock&gt;, C:\htdocs\nunit-test\tests\get-emoji.tests.ps1:15</stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

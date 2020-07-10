@@ -21,7 +21,7 @@ jobs:
         azPSVersion: 'latest'
 
     - name: Generate Pester Report
-      uses: MirrorNG/nunit-reporter@v1.0.9
+      uses: bart-jansen/nunit-reporter@add-pester-support
       if: always()
       with:
         path: ./test-reports/*.xml
